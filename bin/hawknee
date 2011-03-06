@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+# Add the lib directory to $LOAD_PATH
+$LOAD_PATH.unshift File.expand_path((__FILE__) + './../lib')
+
+# Require needed files
+require 'hawknee'
+require 'hawknee/cli'
+
+# Defining the command
+# 
+#     examples:
+# 
+#     hawknee init             # command: init
+#     hawknee add:topic        # command: add, subcommand: topic
+# 
+command = ARGV.first if ARGV.first != nil
+
+# We make the --help option the default (if no command passed, show help)
+ARGV << '--help' if ARGV.empty? && $stdin.tty?
+
+# Run!
+Hawknee::Cli.new(command, ARGV)
