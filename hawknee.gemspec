@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "hawknee.gemspec",
     "lib/hawknee.rb",
     "lib/hawknee/version.rb",
     "test/helper.rb",
