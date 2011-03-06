@@ -1,3 +1,6 @@
+# encoding: utf-8
+
+require './lib/hawknee/version'
 require 'rubygems'
 require 'bundler'
 begin
@@ -13,10 +16,11 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "hawknee"
+  gem.version = Hawknee::Version::STRING
   gem.homepage = "http://github.com/semahawk/hawknee"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Easily implement a forum to your Rails 3 application.}
+  gem.description = %Q{Ruby on Rails 3 based forum.}
   gem.email = "szymon.urbas@yahoo.com"
   gem.authors = ["Szymon Urbaś"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
@@ -44,10 +48,10 @@ task :default => :test
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+  version = Hawknee::Version::STRING
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "hawknee #{version}"
+  rdoc.title = "Hawknee #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
