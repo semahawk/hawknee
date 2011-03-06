@@ -11,8 +11,8 @@ require 'hawknee/cli'
 # 
 #     examples:
 # 
-#     hawknee init             # command: init
-#     hawknee add:topic        # command: add, subcommand: topic
+#     hawknee help             # command: help
+#     hawknee help:add         # command: help, subcommand: add
 # 
 command = ARGV.first if ARGV.first != nil
 
