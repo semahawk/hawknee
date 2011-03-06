@@ -19,8 +19,8 @@ Jeweler::Tasks.new do |gem|
   gem.version = Hawknee::Version::STRING
   gem.homepage = "http://github.com/semahawk/hawknee"
   gem.license = "MIT"
-  gem.summary = %Q{Easily implement a forum to your Rails 3 application.}
-  gem.description = %Q{Ruby on Rails 3 based forum.}
+  gem.summary = %Q{Ruby on Rails 3 based forum.}
+  gem.description = %Q{Easily implement a forum to your Rails 3 application.}
   gem.email = "szymon.urbas@yahoo.com"
   gem.authors = ["Szymon Urbaś"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
