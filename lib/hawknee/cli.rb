@@ -56,7 +56,7 @@ module Hawknee
 			@command = command
 			@subcommand = ARGV[1] == nil ? ARGV[1] : 'init'
 			
-			# Here, in Hawknee, commands are simply classes, (kept in files in 'commands' directory) that inherits from Hawknee::Command.
+			# Here, in Hawknee, commands are simply classes, (kept in files in 'commands' directory) that inherits from Hawknee::Cli::Command.
 			# Subcommands are just functions of this classes.
 			# To see it in action, dig a bit in lib/commands/add.rb file
 			# 
