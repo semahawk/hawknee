@@ -7,17 +7,8 @@ $LOAD_PATH.unshift File.expand_path((__FILE__) + './../lib')
 require 'hawknee'
 require 'hawknee/cli'
 
-# Defining the command
-# 
-#     examples:
-# 
-#     hawknee help             # command: help
-#     hawknee help:add         # command: help, subcommand: add
-# 
-command = ARGV.first if ARGV.first != nil
-
 # We make the --help option the default (if no command passed, show help)
 ARGV << '--help' if ARGV.empty? && $stdin.tty?
 
 # Run!
-Hawknee::Cli.new(command, ARGV)
+Hawknee::Cli.new(ARGV)

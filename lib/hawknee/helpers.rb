@@ -26,17 +26,12 @@ module Hawknee::Helpers
 	#     puts "Good" if command_exists? 'initialize'
 	# 
 	def command_exists?(command)
-		begin
-			true if eval "Hawknee::Cli::Command::#{@command.capitalize}.new.respond_to? '#{@subcommand}'"
-		rescue NameError
-			raise BadCommand
-		end
+		klass = Module.const_get(command.to_s.upcase)
+		return klass.is_a?(Class)
+	rescue NameError
+		raise BadCommand
 	end
-	
-	# Check if user typed command like add:topic
-	def subcommand?(command)
-		true if command =~ /(.*?)\:(.*?)/i
-	end
+
 	
 	### Exceptions/errors down here
 	class BadOption < RuntimeError

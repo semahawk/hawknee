@@ -32,7 +32,7 @@ module Hawknee
 		#     @subcommand     - second ARGV
 		#     @options        - simple opts handler
 		# 
-		def initialize(command, *args)
+		def initialize(*args)
 			
 			# Handles options
 			@options = {}
@@ -53,8 +53,7 @@ module Hawknee
 				raise BadOption
 			end
 			
-			@command = command
-			@subcommand = ARGV[1] == nil ? ARGV[1] : 'init'
+			@command = ARGV.first if ARGV.first != nil
 			
 			# Here, in Hawknee, commands are simply classes, (kept in files in 'commands' directory) that inherits from Hawknee::Cli::Command.
 			# Subcommands are just functions of this classes.
@@ -74,7 +73,7 @@ module Hawknee
 		end # initialize
 		
 		def run
-			eval "Hawknee::Cli::Command::#{@command.capitalize}.new.#{@subcommand}"
+			eval "Hawknee::Cli::Command::#{@command.capitalize}.new"
 		end # run
 	end # Cli
 end # Hawknee
