@@ -1,6 +1,5 @@
 # For nice --options parsing
 require 'optparse'
-require 'rails'
 
 # Require some needed files
 require 'hawknee/version'
@@ -28,9 +27,9 @@ module Hawknee
 		# 
 		#     some enlightening:
 		# 
-		#     command         - ARGV.first: eg. init, add:topic, delete:forum
-		#     @command        - splitted ARGV.first: eg. init, add, delete (the main command)
-		#     @subcommand     - splitted ARGV.first: eg, topic, forum (the subcommand)
+		#     command         - ARGV.first: eg. init, add, delete
+		#     @command        - the same, but in @variable
+		#     @subcommand     - second ARGV
 		#     @options        - simple opts handler
 		# 
 		def initialize(command, *args)
@@ -54,23 +53,12 @@ module Hawknee
 				raise BadOption
 			end
 			
-			# Check if user typed command like add:topic
-			if subcommand? command
-				
-				# Yeah. @command looks nicer than command.split(':')[0] :D
-				@command = command.split(':')[0]
-				@subcommand = command.split(':')[1]
-			
-			# If not, @command is command
-			else
-				@command = command
-				@subcommand = 'init'
-			end
-			
+			@command = command
+			@subcommand = ARGV[1] == nil ? ARGV[1] : 'init'
 			
 			# Here, in Hawknee, commands are simply classes, (kept in files in 'commands' directory) that inherits from Hawknee::Command.
 			# Subcommands are just functions of this classes.
-			# To see it in action, dig a bit in lib/commands/init.rb file
+			# To see it in action, dig a bit in lib/commands/add.rb file
 			# 
 			begin
 				# We make sure the command (class) exists.

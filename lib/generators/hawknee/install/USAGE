@@ -1,0 +1,5 @@
+Usage:
+	rails generate hawknee:install
+
+Description:
+	The hawknee:install generator generally installs the Hawknee, to your app.
