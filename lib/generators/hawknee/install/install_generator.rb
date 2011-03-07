@@ -3,7 +3,7 @@ module Hawknee
 		source_root File.expand_path('../templates', __FILE__)
 		
 		def manifest
-			copy_file "ability.rb", "app/models/ability.rb"
+			puts "Welllcome to Hawknee, stranger!"
 		end
 	end
 end
