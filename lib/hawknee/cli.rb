@@ -48,14 +48,14 @@ module Hawknee
 				raise BadOption
 			end
 			
-			@command = ARGV.first.to_s if ARGV.first != nil
+			@command, @cmethod = parse_command
 			
 			# Here, in Hawknee, commands are simply classes, (kept in files in 'commands' directory) that inherits from Hawknee::Cli::Command.
 			# To see it in action, dig a bit in lib/commands/new.rb file
 			# 
 			begin
 				# We make sure the command (class) exists.
-				eval "Hawknee::Cli::Command::#{@command.capitalize}.new"
+				run if command_exists?
 			# When user typed some class (command) that doesn't exists.
 			rescue BadCommand => e
 				puts e.message
@@ -67,9 +67,22 @@ module Hawknee
 		end # initialize
 		
 		def run
-			puts "Running.."
-			eval "Hawknee::Cli::Command::#{@command.capitalize}.new"
-			puts "Running done.."
+			begin
+				eval "Hawknee::Cli::Command::#{@command.capitalize}.new.#{@cmethod}"
+			rescue NameError, NoMethodError
+				raise BadCommand
+			end
 		end # run
+		
+		def parse_command
+			case ARGV.length
+				when 1
+					return ARGV.first.to_s, 'init'
+				when 2
+					if ARGV[1] != nil
+						return ARGV.first.to_s, ARGV[1].to_s
+					end
+			end
+		end
 	end # Cli
 end # Hawknee

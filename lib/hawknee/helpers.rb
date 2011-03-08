@@ -26,13 +26,11 @@ module Hawknee::Helpers
 	#     puts "Good" if command_exists? 'initialize'
 	# 
 	def command_exists?
-		puts "Checking.."
 		begin
-			true if eval "puts Hawknee::Cli::Command::#{@command.capitalize}.new.respond_to? 'initialize'"
-		rescue NameError => e
-			puts e.message
+			true if eval "Hawknee::Cli::Command::#{@command.capitalize}.new"
+		rescue NameError
+			raise BadCommand
 		end
-		puts "Checking done.."
 	end
 	
 	# Check if user typed command like add:topic
