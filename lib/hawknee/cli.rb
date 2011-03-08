@@ -6,11 +6,6 @@ require 'hawknee/version'
 require 'hawknee/colors'
 require 'hawknee/helpers'
 
-# Require the commands
-Dir[File.dirname(__FILE__) + './commands/*.rb'].each do |file|
-	require File.basename(file, File.extname(file))
-end
-
 # For nice 'n' clean code
 include Hawknee::Helpers
 
@@ -20,16 +15,16 @@ module Hawknee
 	class Cli
 		
 		# Command classes inherit from this module, so we keep command class names separatly with classes somewhere in code.
-		# In other words.. Only class which inherits from Hawknee::Command can be a command.
-		module Command; end
+		# In other words.. Only class which inherits from Hawknee::Cli::Command can be a command.
+		module Command
+			Dir["#{File.dirname(__FILE__)}/commands/*.rb"].each { |f| require f }
+		end
 		
 		# Initialize new Cli, and.. here we go!
 		# 
 		#     some enlightening:
 		# 
-		#     command         - ARGV.first: eg. init, add, delete
-		#     @command        - the same, but in @variable
-		#     @subcommand     - second ARGV
+		#     @command        - ARGV.first
 		#     @options        - simple opts handler
 		# 
 		def initialize(*args)
@@ -53,15 +48,14 @@ module Hawknee
 				raise BadOption
 			end
 			
-			@command = ARGV.first if ARGV.first != nil
+			@command = ARGV.first.to_s if ARGV.first != nil
 			
 			# Here, in Hawknee, commands are simply classes, (kept in files in 'commands' directory) that inherits from Hawknee::Cli::Command.
-			# Subcommands are just functions of this classes.
-			# To see it in action, dig a bit in lib/commands/add.rb file
+			# To see it in action, dig a bit in lib/commands/new.rb file
 			# 
 			begin
 				# We make sure the command (class) exists.
-				run if command_exists? @command.capitalize
+				eval "Hawknee::Cli::Command::#{@command.capitalize}.new"
 			# When user typed some class (command) that doesn't exists.
 			rescue BadCommand => e
 				puts e.message
@@ -73,7 +67,9 @@ module Hawknee
 		end # initialize
 		
 		def run
+			puts "Running.."
 			eval "Hawknee::Cli::Command::#{@command.capitalize}.new"
+			puts "Running done.."
 		end # run
 	end # Cli
 end # Hawknee

@@ -9,23 +9,30 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Szymon Urbaś"]
-  s.date = %q{2011-03-06}
+  s.date = %q{2011-03-08}
+  s.default_executable = %q{hawknee}
   s.description = %q{Easily implement a forum to your Rails 3 application.}
   s.email = %q{szymon.urbas@yahoo.com}
+  s.executables = ["hawknee"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
   ]
   s.files = [
-    ".document",
     "CHANGELOG.rdoc",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
-    "hawknee.gemspec",
+    "bin/hawknee",
+    "lib/generators/hawknee/install/install_generator.rb",
     "lib/hawknee.rb",
+    "lib/hawknee/cli.rb",
+    "lib/hawknee/colors.rb",
+    "lib/hawknee/commands/new.rb",
+    "lib/hawknee/engine.rb",
+    "lib/hawknee/helpers.rb",
     "lib/hawknee/version.rb",
     "test/helper.rb",
     "test/test_hawknee.rb"
@@ -44,21 +51,27 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<haml>, ["~> 3.0.25"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<haml>, ["~> 3.0.25"])
     else
+      s.add_dependency(%q<haml>, ["~> 3.0.25"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<haml>, ["~> 3.0.25"])
     end
   else
+    s.add_dependency(%q<haml>, ["~> 3.0.25"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<haml>, ["~> 3.0.25"])
   end
 end
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
 # Add the lib directory to $LOAD_PATH
-$LOAD_PATH.unshift File.expand_path((__FILE__) + './../lib')
+lib = File.expand_path(File.dirname(__FILE__) + '/../lib')
+$LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
 
 # Require needed files
 require 'hawknee'
