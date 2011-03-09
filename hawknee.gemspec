@@ -22,6 +22,8 @@ Gem::Specification.new do |s|
     "CHANGELOG.rdoc",
     "LICENSE.txt",
     "README.rdoc",
+    "app/controllers/hawknee/application_controller.rb",
+    "app/controllers/hawknee/main_controller.rb",
     "bin/hawknee",
     "config/routes.rb",
     "init.rb",
@@ -33,6 +35,7 @@ Gem::Specification.new do |s|
     "lib/hawknee/engine.rb",
     "lib/hawknee/helpers.rb",
     "lib/hawknee/version.rb",
+    "public/stylesheets/main.css",
     "test/helper.rb",
     "test/test_hawknee.rb"
   ]

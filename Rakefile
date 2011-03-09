@@ -23,7 +23,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Easily implement a forum to your Rails 3 application.}
   gem.email = "szymon.urbas@yahoo.com"
   gem.authors = ["Szymon Urbaś"]
-  gem.files = FileList['lib/**/*.rb', 'bin/*', '*.rb', 'test/**/*', 'config/**/*', 'README.rdoc', 'CHANGELOG.rdoc', 'LICENSE.txt'].to_a
+  gem.files = FileList['app/**/*', 'lib/**/*.rb', 'bin/*', '*.rb', 'test/**/*', 'config/**/*', 'public/**/*', 'README.rdoc', 'CHANGELOG.rdoc', 'LICENSE.txt'].to_a
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
