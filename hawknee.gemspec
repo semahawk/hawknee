@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "app/controllers/hawknee/application_controller.rb",
     "app/controllers/hawknee/main_controller.rb",
+    "app/views/hawknee/main/index.html.haml",
     "bin/hawknee",
     "config/routes.rb",
     "init.rb",
