@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Szymon Urbaś"]
-  s.date = %q{2011-03-08}
+  s.date = %q{2011-03-09}
   s.default_executable = %q{hawknee}
   s.description = %q{Easily implement a forum to your Rails 3 application.}
   s.email = %q{szymon.urbas@yahoo.com}
@@ -20,12 +20,11 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     "CHANGELOG.rdoc",
-    "Gemfile",
-    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
-    "Rakefile",
     "bin/hawknee",
+    "config/routes.rb",
+    "init.rb",
     "lib/generators/hawknee/install/install_generator.rb",
     "lib/hawknee.rb",
     "lib/hawknee/cli.rb",
