@@ -1,7 +1,11 @@
 module Hawknee
 	class MainController < Hawknee::ApplicationController
+		
+		# GET /forum
 		def index
-			render :text => "Aye, comrade! Forum fired up!"
+			respond_to do |format|
+				format.html
+			end
 		end
 	end
 end
