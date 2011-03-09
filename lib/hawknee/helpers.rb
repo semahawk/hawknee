@@ -33,11 +33,6 @@ module Hawknee::Helpers
 		end
 	end
 	
-	# Check if user typed command like add:topic
-	def subcommand?(command)
-		true if command =~ /(.*?)\:(.*?)/i
-	end
-	
 	### Exceptions/errors down here
 	class BadOption < RuntimeError
 		def initialize

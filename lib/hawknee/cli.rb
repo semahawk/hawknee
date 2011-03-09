@@ -32,8 +32,28 @@ module Hawknee
 			# Handles options
 			@options = {}
 			
+			# Set up the command and subcommand
+			@command, @subcommand = parse_command
+			
 			begin
 				opts = OptionParser.new do |opts|
+					opts.banner = "Usage: hawknee COMMAND [OPTIONS]"
+					
+					opts.separator " "
+					
+					opts.separator "Installing Hawknee:"
+					opts.separator "    rails new app_name                 # Make new Rails application"
+					opts.separator "    cd app_name                        # Switch to the app's directory"
+					opts.separator "    gedit Gemfile                      # Add: gem 'hawknee', '#{Hawknee::Version::STRING}'"
+					opts.separator "    rails generate hawknee:install     # Copies needed files"
+					opts.separator "    rails server                       # Runs the server"
+					opts.separator "    go to http://localhost:3000/forum"
+					opts.separator " "
+					opts.separator "    Have fun!"
+					
+					opts.separator " "
+					
+					opts.separator "Common options:"
 					opts.on('-v', '--version', 'Show version') do
 						puts "Hawknee " + Hawknee::Version::STRING
 						exit
@@ -47,8 +67,6 @@ module Hawknee
 			rescue OptionParser::InvalidOption => e
 				raise BadOption
 			end
-			
-			@command, @cmethod = parse_command
 			
 			# Here, in Hawknee, commands are simply classes, (kept in files in 'commands' directory) that inherits from Hawknee::Cli::Command.
 			# To see it in action, dig a bit in lib/commands/new.rb file
@@ -68,7 +86,7 @@ module Hawknee
 		
 		def run
 			begin
-				eval "Hawknee::Cli::Command::#{@command.capitalize}.new.#{@cmethod}"
+				eval "Hawknee::Cli::Command::#{@command.capitalize}.new.#{@subcommand}"
 			rescue NameError, NoMethodError
 				raise BadCommand
 			end
