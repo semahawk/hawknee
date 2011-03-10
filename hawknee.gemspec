@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Szymon Urbaś"]
-  s.date = %q{2011-03-09}
+  s.date = %q{2011-03-10}
   s.default_executable = %q{hawknee}
   s.description = %q{Easily implement a forum to your Rails 3 application.}
   s.email = %q{szymon.urbas@yahoo.com}
@@ -24,7 +24,8 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "app/controllers/hawknee/application_controller.rb",
     "app/controllers/hawknee/main_controller.rb",
-    "app/views/hawknee/main/index.html.haml",
+    "app/views/hawknee/main/index.html.erb",
+    "app/views/layouts/hawknee/application.html.erb",
     "bin/hawknee",
     "config/routes.rb",
     "init.rb",
@@ -54,27 +55,21 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<haml>, ["~> 3.0.25"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_development_dependency(%q<haml>, ["~> 3.0.25"])
     else
-      s.add_dependency(%q<haml>, ["~> 3.0.25"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<haml>, ["~> 3.0.25"])
     end
   else
-    s.add_dependency(%q<haml>, ["~> 3.0.25"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<haml>, ["~> 3.0.25"])
   end
 end
 
