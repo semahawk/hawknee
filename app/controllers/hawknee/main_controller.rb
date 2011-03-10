@@ -4,7 +4,7 @@ module Hawknee
 		# GET /forum
 		def index
 			respond_to do |format|
-				format.html
+				format.html { render :layout => 'hawknee/application' }
 			end
 		end
 	end
