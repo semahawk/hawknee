@@ -26,7 +26,6 @@ or get the .gem package from {here}[https://rubygems.org/gems/hawknee] and type
 Hawknee uses:
 
 - rails >= 3.0.0
-- haml >= 3.0.25
 
 == Contributing to Hawknee
  
