@@ -91,11 +91,11 @@ module Hawknee
 				raise BadCommand
 			end
 		end # run
-		
+
 		def parse_command
 			case ARGV.length
-				when 1
-					return ARGV.first.to_s, 'init'
+         	when 1
+					return ARGV.first.to_s, "init"
 				when 2
 					if ARGV[1] != nil
 						return ARGV.first.to_s, ARGV[1].to_s
