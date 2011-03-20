@@ -1,4 +1,4 @@
-= hawknee 0.2.1 (07-03-2011)
+= hawknee 0.2.1 (20-03-2011)
 
 - Routes are now working! (I mean, this '/forum' scope works!)
 - Yay! ARGV.first now working as a command!
