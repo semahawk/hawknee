@@ -8,22 +8,15 @@ Hawknee is a gem that implements a forum, to your Rails 3.0 application.
 
 	gem install hawknee
 
-or get the .gem package from {here}[https://rubygems.org/gems/hawknee] and type
-
-	cd /directory/where/the/.gem/file/is
-	gem install hawknee-x.y.z.gem
-
 2. Then, to install the forum:
 
 	cd /path/to/your/rails/app/path  # Go to your Rails app
 	rails generate hawknee:install   # Copy all the needed files. You can use 'g' instead of 'generate'
 	rails server                     # Run the server.
 
-3. Go to http://localhost:3000/forum and here you are!
+3. Go to *http://localhost:3000/forum* and here you are!
 
 == Requirements
-
-Hawknee uses:
 
 - rails >= 3.0.0
 
