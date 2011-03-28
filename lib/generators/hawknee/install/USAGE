@@ -1,2 +1,2 @@
 Description:
-  The hawknee:install generator generally installs the Hawknee, to your app.
+  Copy all the needed files to your Rails application.

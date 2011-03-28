@@ -37,6 +37,12 @@ Gem::Specification.new do |s|
     "lib/hawknee/engine.rb",
     "lib/hawknee/helpers.rb",
     "lib/hawknee/version.rb",
+<<<<<<< HEAD:hawknee.gemspec
+=======
+    "public/images/hawknee/clouds.png",
+    "public/stylesheets/hawknee/960.css",
+    "public/stylesheets/hawknee/main.css",
+>>>>>>> styling:hawknee.gemspec
     "test/helper.rb",
     "test/test_hawknee.rb"
   ]
