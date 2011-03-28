@@ -20,7 +20,7 @@ Hawknee is a gem that implements a forum, to your Rails 3.0 application.
 	bundle install                   # Install all the required gems (including Hawknee)
 	rails server                     # Run the server.
 
-- Go to *http://localhost:3000/forum* and here you are!
+- Go to *{http://localhost:3000/forum}[http://localhost:3000/forum]* and here you are!
 
 == Requirements
 
@@ -28,7 +28,7 @@ Hawknee is a gem that implements a forum, to your Rails 3.0 application.
 
 == Hey, it's not working..
 
-According to {Semantic Versioning}[http://semver.org/] - "Major version zero (0.y.z) is for initial development. Anything may change at any time. The public API should not be considered stable."
+According to {Semantic Versioning}[http://semver.org/] - _"Major version zero (0.y.z) is for initial development. Anything may change at any time. The public API should not be considered stable."_
 
 == Contributing to Hawknee
  
