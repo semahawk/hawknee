@@ -4,25 +4,21 @@ Hawknee is a gem that implements a forum, to your Rails 3.0 app.
 
 == Installation
 
-- First of all, you'll need a Hawknee itself.
+1. First of all, you'll need a Hawknee itself.
 
 	gem install hawknee
 
-- Then, to install the forum:
+2. Then, to install the forum:
 
 	cd /path/to/your/rails/app/path  # Go to your Rails app
 	rails generate hawknee:install   # Install. You can use 'g' instead of 'generate'
 	rails server                     # Run the server.
 
-- Go to *http://localhost:3000/forum* and here you are!
+3. Go to *http://localhost:3000/forum* and here you are!
 
 == Requirements
 
 - rails >= 3.0.0
-
-== Hey, it's not working!..
-
-According to {Semantic Versioning}[http://semver.org/] - _"Major version zero (0.y.z) is for initial development. Anything may change at any time. The public API should not be considered stable."_
 
 == Contributing to Hawknee
  
