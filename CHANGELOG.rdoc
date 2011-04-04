@@ -1,8 +1,12 @@
+= hawknee 0.2.2 (29-03-2011)
+
+- <tt>help</tt> command is now working.
+
 = hawknee 0.2.1 (20-03-2011)
 
 - Routes are now working! (I mean, this '/forum' scope works!)
 - Yay! ARGV.first now working as a command!
-- Added the hawknee:install generator. Now it's not working, but it will be in next versions.
+- Added the <tt>hawknee:install</tt> generator. Now it's not working, but it will be in next versions.
 
 = hawknee 0.2.0 (06-03-2011)
 
