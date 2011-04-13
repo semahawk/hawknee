@@ -52,7 +52,7 @@ module Hawknee::Helpers
 		if commands.include? command
 			true
 		else
-			raise BadCommand
+			raise InvalidCommand
 		end
 	end
 	
@@ -68,24 +68,5 @@ module Hawknee::Helpers
 	# @return [Boolean] true if user doesn't know what is loosing.
 	def using_windows?
 		RUBY_PLATFORM =~ /mswin|win32|mingw/
-	end
-	
-	# ================================= #
-	#    Exceptions/errors down here    #
-	# ================================= #
-	class BadOption < RuntimeError
-		def initialize
-			puts "Ooops!".bold.colorize(:red) + " It seems, you passed invalid option"
-			puts "Run with " + "-h".bold.colorize(:blue) + " or " + "--help".bold.colorize(:blue) + " option, to get some help."
-			exit
-		end
-	end
-	
-	class BadCommand < RuntimeError
-		def initialize
-			puts "Ooops!".bold.colorize(:red) + " It seems, you typed some invalid command"
-			puts "Run with " + "-h".bold.colorize(:blue) + " or " + "--help".bold.colorize(:blue) + " option, to get some help."
-			exit
-		end
 	end
 end

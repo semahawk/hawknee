@@ -6,10 +6,6 @@ module Hawknee::Cli::Command
 		
 		def topic
 			puts "You're adding a new topic!"
-			
-			@topic[:title] = ask "Topic title: "
-			@topic[:tag] = ask "Topic tag: "
-			
 			puts "Oorah!"
 		end
 		
@@ -27,6 +23,10 @@ Usage: hawknee new topic|forum|category [options]
 HELP
 			
 			puts help
+		end
+
+		def desc
+			"Does nothin' yet."
 		end
 	end
 end

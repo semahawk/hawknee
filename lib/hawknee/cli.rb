@@ -13,6 +13,9 @@ module Hawknee
 	# You know.. Command Line Interface.. Got it? :)
 	class Cli
 		
+		class InvalidCommand < RuntimeError; end
+		class InvalidOption < RuntimeError; end
+		
 		# Command classes inherit from this module, so we keep command class names separatly with classes somewhere in code.
 		# In other words.. Only class which inherits from Hawknee::Cli::Command can be a command.
 		module Command
@@ -32,7 +35,7 @@ module Hawknee
 			
 			begin
 				opts = OptionParser.new do |opts|
-					opts.banner = "Usage: hawknee COMMAND [OPTIONS]"
+					opts.banner = "Usage: hawknee <command> [options]"
 					
 					opts.separator " "
 					
@@ -62,20 +65,27 @@ module Hawknee
 					opts.separator " "
 					opts.separator "You can also get some help about command, by typing:"
 					opts.separator "    hawknee help <command>"
+					opts.separator " "
+					opts.separator "To see all available commands, simply type:"
+					opts.separator "    hawknee help commands"
 				end.parse!
 			rescue OptionParser::InvalidOption => e
-				raise BadOption
+				if /(?<message>.*):\s(?<option>--.*)/ =~ e.message
+					puts "Ooops!".bold.colorize(:red) + " You've just passed some not valid option '" + "#{option}".bold.colorize(:magenta) + "'!"
+					puts "Also, you can try running with '" + "-h".bold.colorize(:blue) + "' or '" + "--help".bold.colorize(:blue) + "' option to get some help."
+					exit
+				end
 			end
 			
 			# Here, in Hawknee, commands are simply classes, (kept in files in 'commands' directory) that inherits from Hawknee::Cli::Command.
 			# To see it in action, dig a bit in lib/commands/new.rb file
-			# 
 			begin
 				# We make sure the command (class) exists.
 				run if command_exists? @command
 			# When user typed some class (command) that doesn't exists.
-			rescue BadCommand => e
-				puts e.message
+			rescue InvalidCommand => e
+				puts "Ohnoo!".bold.colorize(:red) + " It seems you have typed something wrong :/"
+				puts "Try running with '" + "-h".bold.colorize(:blue) + "' or '" + "--help".bold.colorize(:blue) + "' option, to get some help."
 			# When typed ^C
 			rescue Interrupt
 				puts "\n[" + "interrupted".bold.colorize(:red) + "]"
@@ -88,7 +98,7 @@ module Hawknee
 			begin
 				eval "Hawknee::Cli::Command::#{@command}.new.#{@subcommand}"
 			rescue NameError, NoMethodError
-				raise BadCommand
+				raise InvalidCommand
 			end
 		end # run
 		
