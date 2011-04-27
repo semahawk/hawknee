@@ -1,0 +1,43 @@
+/*
+ * name:     base.css
+ * author:   Szymon Urbaś
+ * license:  MIT (aka X11) license
+ * desc:     stylesheet for very general styling
+ * 
+ */
+ 
+body { background: #fff; margin: 0px; padding: 0px; }
+a { color: inherit; text-decoration: none; }
+
+#wrap {
+	width: 924px;
+	margin: 0 auto;
+	padding: 18px;
+}
+
+#header {
+	padding: 0px;
+	margin-bottom: 30px;
+	height: 100px;
+}
+	#header h1 {
+		margin: 0px; padding: 0px;
+		font: italic bold 4.5em Aller;
+		color: #1A8BD2;
+	}
+
+#content {
+	background: #fff;
+	font-family: Aller;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+}
+
+#footer {
+	text-align: center;
+	font: italic normal .9em Ubuntu;
+	color: #2e3436;
+}
+
+.spacer { height: 3em; }

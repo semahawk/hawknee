@@ -1,0 +1,51 @@
+.category {
+	background: #fff;
+	border: 3px solid #e1ddda;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	padding: 0px;
+	margin-bottom: 30px;
+}
+	.category h1 {
+		margin: 0px;
+		padding: 6px;
+		font: italic bolder 2em Ubuntu;
+		color: #f59000;
+	}
+	
+	.category ul {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		list-style-type: none;
+	}
+		.category ul li {
+			padding: 6px;
+		}
+			.category ul li:nth-child(2n+2){
+				background: #f5f5f5;
+			}
+			.category ul li span {
+				margin-left: 40px;
+				font-size: .8em;
+				color: #888;
+				font-family: Aller;
+			}
+			.category ul li a {
+				margin-left: 20px;
+				font: italic bold 1.1em Aller;
+				color: #31393C;
+			}
+				.category ul li a:hover { color: #729fcf; }
+	.category .toolbox {
+		position: absolute;
+		display: none;
+		height: 20px;
+		background: #fff;
+		padding: 4px;
+		font-size: .7em;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}
