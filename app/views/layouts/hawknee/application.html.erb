@@ -2,11 +2,23 @@
 <html>
 	<head>
 		<title>Hawknee</title>
-		<%= stylesheet_link_tag('hawknee/site') %>
+		<%= stylesheet_link_tag 'hawknee/base' %>
+		<%= stylesheet_link_tag 'hawknee/board' %>
+		<%= javascript_include_tag 'hawknee/jquery.min.js' %>
+		<%= javascript_include_tag 'hawknee/board.js' %>
 		<%= csrf_meta_tag %>
 	</head>
 	<body>
-		<%= image_tag('hawknee/clouds.png') %>
-		<%= yield %>
+		<div id="wrap">
+			<div id="header">
+				<h1>Ahoy!</h1>
+			</div>
+			<div id="content">
+				<%= yield %>
+			</div>
+			<div id="footer">
+				Copyright &copy; 2011 by Noone
+			</div>
+		</div>
 	</body>
 </html>

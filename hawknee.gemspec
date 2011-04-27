@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Szymon Urbaś"]
-  s.date = %q{2011-04-13}
+  s.date = %q{2011-04-27}
   s.default_executable = %q{hawknee}
   s.description = %q{Easily implement a forum to your Rails 3 application.}
   s.email = %q{szymon.urbas@yahoo.com}
@@ -38,9 +38,14 @@ Gem::Specification.new do |s|
     "lib/hawknee/engine.rb",
     "lib/hawknee/helpers.rb",
     "lib/hawknee/version.rb",
-    "public/images/hawknee/clouds.png",
-    "public/stylesheets/hawknee/960.css",
-    "public/stylesheets/hawknee/main.css"
+    "public/images/hawknee/icons/application_delete.png",
+    "public/images/hawknee/icons/application_edit.png",
+    "public/images/hawknee/icons/key_add.png",
+    "public/images/hawknee/icons/key_delete.png",
+    "public/javascripts/hawknee/board.js",
+    "public/javascripts/hawknee/jquery.min.js",
+    "public/stylesheets/hawknee/base.css",
+    "public/stylesheets/hawknee/board.css"
   ]
   s.homepage = %q{http://github.com/semahawk/hawknee}
   s.licenses = ["MIT"]
