@@ -1,5 +1,14 @@
 = Hawknee
 
+*Homepage*:         {http://semahawk.github.com/hawknee}[http://semahawk.github.com/hawknee]
+*Author*:           Szymon Urbaś (szymon{dot}urbas{at}yahoo{dot}com)
+*License*:          MIT License
+*Copyright*:        2011
+
+*Latest version*:   0.2.1
+*Stage*:            *Development* (it isn't and won't be working until version 1.y.z)
+*Release day*:      March 20th, 2011
+
 Hawknee is a gem that implements a forum, to your Rails 3.0 application.
 
 == Installation
@@ -29,6 +38,7 @@ Hawknee is a gem that implements a forum, to your Rails 3.0 application.
 == Hey, it's not working..
 
 According to {Semantic Versioning}[http://semver.org/] - _"Major version zero (0.y.z) is for initial development. Anything may change at any time. The public API should not be considered stable."_
+So, Hawknee isn't working, and won't be until version 1.y.z.
 
 == Contributing to Hawknee
  
