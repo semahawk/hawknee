@@ -60,6 +60,12 @@ div#content div#description {
 	color: #2e3436;
 }
 
+div#content h1 {
+	font-size: 3em;
+	color: #f59000;
+	font-style: italic;
+}
+
 div#content h2 {
 	font-size: 2em;
 	color: #339ECE;
